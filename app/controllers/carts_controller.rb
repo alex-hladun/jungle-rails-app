@@ -1,6 +1,8 @@
 class CartsController < ApplicationController
 
   def show
+    # render plain: params.inspect
+    # debug 
   end
 
   def add_item
