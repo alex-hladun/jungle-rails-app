@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    # puts user
     # Creates an array of line items.
     @line_items = @order.line_items
   end
@@ -38,6 +39,8 @@ class OrdersController < ApplicationController
   end
 
   def create_order(stripe_charge)
+    puts 'ORDER CREATE PARAMS:'
+    puts params
     order = Order.new(
       email: params[:stripeEmail],
       total_cents: cart_subtotal_cents,
