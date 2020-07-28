@@ -1,5 +1,11 @@
 <h1>Signup!</h1>
 
+<% if notice %>
+  <div class="alert alert-warning">
+    Notice: <%= notice%>
+  </div>
+<% end %>
+
 <%= form_for :user, url: '/users' do |f| %>
 
   First Name: <%= f.text_field :first_name %>

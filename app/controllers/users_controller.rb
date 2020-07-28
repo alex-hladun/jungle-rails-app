@@ -7,7 +7,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
-      redirect_to '/signup'
+      redirect_to '/signup', notice:'Error! Please make sure all films are filled and a unique email is used. Password must also match and be 8 or more characters.'
   end
 
   end
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email.downcase.strip, :password, :password_confirmation)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 
 
