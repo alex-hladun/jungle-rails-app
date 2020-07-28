@@ -1,5 +1,9 @@
 <h1>Login</h1>
-
+<% if notice %>
+  <div class="alert alert-warning">
+    Notice: <%= notice%>
+  </div>
+<% end %>
 <%= form_tag '/login' do %>
 
   Email: <%= text_field_tag :email %>
